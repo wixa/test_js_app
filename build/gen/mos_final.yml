@@ -1,0 +1,174 @@
+name: test_js
+type: app
+version: "1.0"
+arch: esp32
+author: mongoose-os
+description: An empty app that does nothing
+mongoose_os_version: latest
+sources:
+- local_libs/IFC_Driver/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src/mg_rpc
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart/src
+- src
+filesystem:
+- local_libs/IFC_Driver/fs
+- fs
+extra_files: []
+ffi_symbols: []
+config_schema:
+- - http
+  - o
+  - title: HTTP Server
+- - http.enable
+  - b
+  - true
+  - title: Enable HTTP Server
+- - http.listen_addr
+  - s
+  - "80"
+  - title: Listening port / address
+- - http.ssl_cert
+  - s
+  - title: Turn on SSL on the listener, use this cert
+- - http.ssl_key
+  - s
+  - title: SSL key to use
+- - http.ssl_ca_cert
+  - s
+  - title: Verify clients this CA bundle
+- - http.upload_acl
+  - s
+  - '*'
+  - title: Upload file ACL
+- - http.hidden_files
+  - s
+  - title: Hidden file pattern
+- - http.auth_domain
+  - s
+  - title: Enable authentication of all HTTP requests
+- - http.auth_file
+  - s
+  - title: Password file to use for auth
+- - rpc
+  - o
+  - title: RPC settings
+- - rpc.enable
+  - b
+  - true
+  - title: Enable RPC
+- - rpc.max_frame_size
+  - i
+  - 4096
+  - title: Max Frame Size
+- - rpc.max_queue_length
+  - i
+  - 25
+  - title: Max Queue Length
+- - rpc.default_out_channel_idle_close_timeout
+  - i
+  - 10
+  - title: Default idle close timeout for outbound channels
+- - rpc.ws
+  - o
+  - title: RPC over WebSocket settings
+- - rpc.ws.enable
+  - b
+  - true
+  - title: Enable RPC over WebSocket
+- - rpc.ws.server_address
+  - s
+  - ""
+  - title: Cloud server address
+- - rpc.ws.reconnect_interval_min
+  - i
+  - 1
+  - title: Minimal reconnect interval
+- - rpc.ws.reconnect_interval_max
+  - i
+  - 60
+  - title: Maximal reconnect interval
+- - rpc.ws.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - rpc.ws.ssl_ca_file
+  - s
+  - title: TLS CA file
+- - rpc.ws.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - rpc.uart
+  - o
+  - title: RPC-over-UART settings
+- - rpc.uart.uart_no
+  - i
+  - title: UART number (-1 to disable)
+- - rpc.uart.baud_rate
+  - i
+  - 115200
+  - title: Baud rate
+- - rpc.uart.fc_type
+  - i
+  - 2
+  - title: 'Flow control: 0 - none, 1 - CTS/RTS, 2 - XON/XOFF'
+- - rpc.uart.wait_for_start_frame
+  - b
+  - true
+  - title: Wait for an incoming frame before using the channel
+build_vars:
+  MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_IFC_DRIVER: "1"
+  MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
+  MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_UART: "1"
+cflags: []
+cxxflags: []
+cdefs:
+  MGOS_ENABLE_FILE_UPLOAD: "1"
+  MGOS_ENABLE_RPC_CHANNEL_HTTP: "1"
+  MGOS_ENABLE_RPC_CHANNEL_WS: "1"
+  MGOS_ENABLE_SYS_SERVICE: "1"
+  MGOS_ENABLE_TUNNEL: "0"
+  MGOS_ENABLE_WEB_CONFIG: "0"
+  MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_IFC_DRIVER: "1"
+  MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
+  MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_UART: "1"
+tags:
+- c
+libs_version: latest
+modules_version: latest
+conds: []
+manifest_version: 2017-05-18
+skeleton_version: 2017-05-18
+deps: []
+libs_handled:
+- name: IFC_Driver
+  path: local_libs/IFC_Driver
+  deps: []
+- name: http-server
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server
+  deps:
+  - atca
+- name: rpc-common
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common
+  deps:
+  - http-server
+- name: rpc-service-config
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config
+  deps:
+  - rpc-common
+- name: rpc-service-fs
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs
+  deps:
+  - rpc-common
+- name: rpc-uart
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart
+  deps:
+  - rpc-common
