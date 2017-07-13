@@ -2,8 +2,7 @@
 
 ## Overview
 
-This is an empty app, serves as a skeleton for building Mongoose OS
-apps from scratch.
+Only test app for write own "C" librarys and testing use its from ffi
 
 ## How to install this app
 
