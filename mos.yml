@@ -1,5 +1,5 @@
-author: mongoose-os
-description: An empty app that does nothing
+author: wixa <shyshkin.konstantin@gmail.com>
+description: Only test app for write own "C" librarys and testing use its from ffi
 version: 1.0
 
 libs_version: ${mos_version}
