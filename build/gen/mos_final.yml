@@ -2,24 +2,159 @@ name: test_js
 type: app
 version: "1.0"
 arch: esp32
-author: mongoose-os
-description: An empty app that does nothing
+author: wixa <shyshkin.konstantin@gmail.com>
+description: Only test app for write own "C" librarys and testing use its from ffi
 mongoose_os_version: latest
 sources:
 - local_libs/IFC_Driver/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws/src
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/src
+- ${mjs_path}/mjs.c
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server/src
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src/mg_rpc
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt/src
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config/src
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/src/common_gpio
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota/src
 - /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/src
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/src/esp32
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash/src
 - src
 filesystem:
 - local_libs/IFC_Driver/fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/fs
+- ${mjs_path}/mjs/lib/api_*.js
+- ${mongoose_os_path}/fw/mjs_api/api_*.js
+- ${mongoose_os_path}/fw/platforms/${arch}/mjs_api/api_*.js
+- local_libs/IFC_Driver/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash/mjs_fs
+- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/esp32/fs
 - fs
 extra_files: []
 ffi_symbols: []
+modules:
+- origin: https://github.com/cesanta/mjs
 config_schema:
+- - mqtt
+  - o
+  - title: MQTT settings
+- - mqtt.enable
+  - b
+  - false
+  - title: Enable MQTT
+- - mqtt.server
+  - s
+  - iot.eclipse.org:1883
+  - title: MQTT server
+- - mqtt.client_id
+  - s
+  - ""
+  - title: ClientID t send to the broker. Defaults to device.id.
+- - mqtt.user
+  - s
+  - ""
+  - title: User name
+- - mqtt.pass
+  - s
+  - ""
+  - title: Password
+- - mqtt.reconnect_timeout_min
+  - d
+  - 2
+  - title: Starting reconnect timeout
+- - mqtt.reconnect_timeout_max
+  - d
+  - 60
+  - title: Maximum reconnect timeout
+- - mqtt.ssl_cert
+  - s
+  - ""
+  - title: Client certificate to present to the server
+- - mqtt.ssl_key
+  - s
+  - ""
+  - title: Private key corresponding to the certificate
+- - mqtt.ssl_ca_cert
+  - s
+  - ""
+  - title: Verify server certificate using this CA bundle
+- - mqtt.ssl_cipher_suites
+  - s
+  - ""
+  - title: Cipher suites to offer to the server
+- - mqtt.ssl_psk_identity
+  - s
+  - ""
+  - title: PSK identity (must specify PSK cipher suites)
+- - mqtt.ssl_psk_key
+  - s
+  - ""
+  - title: PSK key
+- - mqtt.clean_session
+  - b
+  - true
+  - title: Clean Session
+- - mqtt.keep_alive
+  - i
+  - 60
+  - title: Keep alive interval
+- - mqtt.will_topic
+  - s
+  - ""
+  - title: Will topic
+- - mqtt.will_message
+  - s
+  - ""
+  - title: Will message
+- - debug.stdout_topic
+  - s
+  - ""
+  - title: MQTT topic to publish STDOUT to
+- - debug.stderr_topic
+  - s
+  - ""
+  - title: MQTT topic to publish STDERR to
+- - debug.stdout_topic
+  - esp32_??????/log
+- - debug.stderr_topic
+  - esp32_??????/log
+- - aws
+  - o
+  - title: AWS settings
+- - aws.shadow
+  - o
+  - title: AWS Device Shadow settings
+- - aws.shadow.thing_name
+  - s
+  - ""
+  - title: Set thing name. If not specified, device.id is used
 - - http
   - o
   - title: HTTP Server
@@ -53,6 +188,33 @@ config_schema:
 - - http.auth_file
   - s
   - title: Password file to use for auth
+- - mjs
+  - o
+  - title: mJS settings
+- - mjs.generate_jsc
+  - b
+  - true
+  - title: Generate .jsc file when executing any .js file
+- - update.url
+  - s
+  - title: Fetch updates form here
+- - update.interval
+  - i
+  - title: Check for updates this often
+- - update.ssl_ca_file
+  - s
+  - ca.pem
+  - title: TLS CA file
+- - update.ssl_client_cert_file
+  - s
+  - title: TLS client cert file
+- - update.ssl_server_name
+  - s
+  - title: TLS Server Name
+- - update.enable_post
+  - b
+  - true
+  - title: Enable POST updates
 - - rpc
   - o
   - title: RPC settings
@@ -100,6 +262,49 @@ config_schema:
 - - rpc.ws.ssl_client_cert_file
   - s
   - title: TLS client cert file
+- - rpc.mqtt
+  - o
+  - title: RPC over MQTT settings
+- - rpc.mqtt.enable
+  - b
+  - true
+  - title: Enable RPC over MQTT
+- - rpc.mqtt.topic
+  - s
+  - ""
+  - title: Topic to use for RPC requests and responses. The default is ${device.id}/rpc
+- - rpc.mqtt.is_trusted
+  - b
+  - true
+  - title: Whether this channel can be used for privileged commands, such as changing
+      configuration
+- - i2c
+  - o
+  - title: I2C settings
+- - i2c.enable
+  - b
+  - false
+  - title: Enable I2C
+- - i2c.freq
+  - i
+  - 100000
+  - title: Clock frequency
+- - i2c.debug
+  - b
+  - false
+  - title: Debug I2C bus activity
+- - i2c.sda_gpio
+  - i
+  - 0
+  - title: GPIO to use for SDA
+- - i2c.scl_gpio
+  - i
+  - 0
+  - title: GPIO to use for SCL
+- - i2c.sda_gpio
+  - 32
+- - i2c.scl_gpio
+  - 33
 - - rpc.uart
   - o
   - title: RPC-over-UART settings
@@ -118,28 +323,97 @@ config_schema:
   - b
   - true
   - title: Wait for an incoming frame before using the channel
+- - spi
+  - o
+  - title: SPI settings
+- - spi.enable
+  - b
+  - false
+  - title: Enable SPI
+- - spi.debug
+  - b
+  - false
+  - title: Debug SPI bus activity
+- - spi.unit_no
+  - i
+  - 3
+  - title: Which SPI unit to use, 2 or 3
+- - spi.miso_gpio
+  - i
+  - 19
+  - title: GPIO to use for MISO
+- - spi.mosi_gpio
+  - i
+  - 23
+  - title: GPIO to use for MOSI
+- - spi.sclk_gpio
+  - i
+  - 18
+  - title: GPIO to use for SCLK
+- - spi.cs0_gpio
+  - i
+  - 5
+  - title: GPIO to use for CS0
+- - spi.cs1_gpio
+  - i
+  - -1
+  - title: GPIO to use for CS1
+- - spi.cs2_gpio
+  - i
+  - -1
+  - title: GPIO to use for CS2
 build_vars:
+  MGOS_ENABLE_I2C_GPIO: "1"
+  MGOS_ENABLE_SPI_GPIO: "0"
+  MGOS_ENABLE_UPDATER: "1"
+  MGOS_HAVE_AWS: "1"
   MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_I2C: "1"
   MGOS_HAVE_IFC_DRIVER: "1"
+  MGOS_HAVE_MJS: "1"
+  MGOS_HAVE_MQTT: "1"
+  MGOS_HAVE_OTA_HTTP_CLIENT: "1"
+  MGOS_HAVE_OTA_HTTP_SERVER: "1"
   MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_LOOPBACK: "1"
+  MGOS_HAVE_RPC_MQTT: "1"
   MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
   MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_SERVICE_GPIO: "1"
+  MGOS_HAVE_RPC_SERVICE_I2C: "1"
+  MGOS_HAVE_RPC_SERVICE_OTA: "1"
   MGOS_HAVE_RPC_UART: "1"
+  MGOS_HAVE_SPI: "1"
+  MGOS_HAVE_VFS_DEV_SPI_FLASH: "1"
 cflags: []
 cxxflags: []
 cdefs:
+  MG_ENABLE_MQTT: "1"
   MGOS_ENABLE_FILE_UPLOAD: "1"
   MGOS_ENABLE_RPC_CHANNEL_HTTP: "1"
   MGOS_ENABLE_RPC_CHANNEL_WS: "1"
   MGOS_ENABLE_SYS_SERVICE: "1"
   MGOS_ENABLE_TUNNEL: "0"
   MGOS_ENABLE_WEB_CONFIG: "0"
+  MGOS_HAVE_AWS: "1"
   MGOS_HAVE_HTTP_SERVER: "1"
+  MGOS_HAVE_I2C: "1"
   MGOS_HAVE_IFC_DRIVER: "1"
+  MGOS_HAVE_MJS: "1"
+  MGOS_HAVE_MQTT: "1"
+  MGOS_HAVE_OTA_HTTP_CLIENT: "1"
+  MGOS_HAVE_OTA_HTTP_SERVER: "1"
   MGOS_HAVE_RPC_COMMON: "1"
+  MGOS_HAVE_RPC_LOOPBACK: "1"
+  MGOS_HAVE_RPC_MQTT: "1"
   MGOS_HAVE_RPC_SERVICE_CONFIG: "1"
   MGOS_HAVE_RPC_SERVICE_FS: "1"
+  MGOS_HAVE_RPC_SERVICE_GPIO: "1"
+  MGOS_HAVE_RPC_SERVICE_I2C: "1"
+  MGOS_HAVE_RPC_SERVICE_OTA: "1"
   MGOS_HAVE_RPC_UART: "1"
+  MGOS_HAVE_SPI: "1"
+  MGOS_HAVE_VFS_DEV_SPI_FLASH: "1"
 tags:
 - c
 libs_version: latest
@@ -152,14 +426,41 @@ libs_handled:
 - name: IFC_Driver
   path: local_libs/IFC_Driver
   deps: []
+- name: mqtt
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt
+  deps: []
+- name: aws
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws
+  deps:
+  - mqtt
 - name: http-server
   path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server
   deps:
   - atca
+- name: mjs
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs
+  deps: []
+- name: ota-http-client
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client
+  deps: []
+- name: ota-http-server
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server
+  deps:
+  - http-server
+  - ota-http-client
 - name: rpc-common
   path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common
   deps:
   - http-server
+- name: rpc-loopback
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback
+  deps:
+  - rpc-common
+- name: rpc-mqtt
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt
+  deps:
+  - mqtt
+  - rpc-common
 - name: rpc-service-config
   path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config
   deps:
@@ -168,7 +469,31 @@ libs_handled:
   path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs
   deps:
   - rpc-common
+- name: rpc-service-gpio
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio
+  deps:
+  - rpc-common
+- name: i2c
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c
+  deps: []
+- name: rpc-service-i2c
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c
+  deps:
+  - i2c
+  - rpc-common
+- name: rpc-service-ota
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota
+  deps:
+  - ota-http-client
+  - rpc-common
 - name: rpc-uart
   path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart
   deps:
   - rpc-common
+- name: spi
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi
+  deps: []
+- name: vfs-dev-spi-flash
+  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash
+  deps:
+  - spi

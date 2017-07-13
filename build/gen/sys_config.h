@@ -13,6 +13,16 @@ struct sys_config {
     int retry_max;
     int update_interval;
   } sntp;
+  struct sys_config_update {
+    int timeout;
+    int commit_timeout;
+    char *url;
+    int interval;
+    char *ssl_ca_file;
+    char *ssl_client_cert_file;
+    char *ssl_server_name;
+    int enable_post;
+  } update;
   struct sys_config_wifi {
     struct sys_config_wifi_sta {
       int enable;
@@ -57,11 +67,37 @@ struct sys_config {
     int stderr_uart;
     int factory_reset_gpio;
     char *mg_mgr_hexdump_file;
+    char *stdout_topic;
+    char *stderr_topic;
   } debug;
   struct sys_config_sys {
     int wdt_timeout;
   } sys;
   char *conf_acl;
+  struct sys_config_mqtt {
+    int enable;
+    char *server;
+    char *client_id;
+    char *user;
+    char *pass;
+    double reconnect_timeout_min;
+    double reconnect_timeout_max;
+    char *ssl_cert;
+    char *ssl_key;
+    char *ssl_ca_cert;
+    char *ssl_cipher_suites;
+    char *ssl_psk_identity;
+    char *ssl_psk_key;
+    int clean_session;
+    int keep_alive;
+    char *will_topic;
+    char *will_message;
+  } mqtt;
+  struct sys_config_aws {
+    struct sys_config_aws_shadow {
+      char *thing_name;
+    } shadow;
+  } aws;
   struct sys_config_http {
     int enable;
     char *listen_addr;
@@ -73,6 +109,9 @@ struct sys_config {
     char *auth_domain;
     char *auth_file;
   } http;
+  struct sys_config_mjs {
+    int generate_jsc;
+  } mjs;
   struct sys_config_rpc {
     int enable;
     int max_frame_size;
@@ -87,6 +126,11 @@ struct sys_config {
       char *ssl_ca_file;
       char *ssl_client_cert_file;
     } ws;
+    struct sys_config_rpc_mqtt {
+      int enable;
+      char *topic;
+      int is_trusted;
+    } mqtt;
     struct sys_config_rpc_uart {
       int uart_no;
       int baud_rate;
@@ -94,6 +138,24 @@ struct sys_config {
       int wait_for_start_frame;
     } uart;
   } rpc;
+  struct sys_config_i2c {
+    int enable;
+    int freq;
+    int debug;
+    int sda_gpio;
+    int scl_gpio;
+  } i2c;
+  struct sys_config_spi {
+    int enable;
+    int debug;
+    int unit_no;
+    int miso_gpio;
+    int mosi_gpio;
+    int sclk_gpio;
+    int cs0_gpio;
+    int cs1_gpio;
+    int cs2_gpio;
+  } spi;
 };
 
 const struct mgos_conf_entry *sys_config_schema();
