@@ -60,8 +60,8 @@
     "stderr_uart": 0, 
     "factory_reset_gpio": -1, 
     "mg_mgr_hexdump_file": "", 
-    "stdout_topic": "esp32_??????/log", 
-    "stderr_topic": "esp32_??????/log"
+    "stdout_topic": "", 
+    "stderr_topic": ""
   }, 
   "sys": {
     "wdt_timeout": 30
@@ -87,8 +87,11 @@
     "will_message": ""
   }, 
   "aws": {
-    "shadow": {
-      "thing_name": ""
+    "thing_name": "", 
+    "greengrass": {
+      "enable": false, 
+      "reconnect_timeout_min": 2, 
+      "reconnect_timeout_max": 60
     }
   }, 
   "http": {

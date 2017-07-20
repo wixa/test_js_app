@@ -6,7 +6,7 @@
 
 #include <stdbool.h>
 
-#include "fw/src/mgos_dlsym.h"
+#include "mgos_dlsym.h"
 
 /* NOTE: signatures are fake */
 double  ceil(double);
@@ -54,6 +54,7 @@ void * mgos_connect_http(char *, void (*)(void *, int, void *, void *), void *);
 void * mgos_connect_http_ssl(char *, void (*)(void *, int, void *, void *), void *, char *, char *, char *);
 void * mgos_connect_ssl(char *, void (*)(void *, int, void *, void *), void *, char *, char *, char *);
 void  mgos_disconnect(void *);
+void  mgos_esp_deep_sleep_d(double);
 void * mgos_get_body_ptr(void *);
 int  mgos_get_free_heap_size();
 int  mgos_get_heap_size();
@@ -89,7 +90,7 @@ void  mgos_log(char *, int, int, char *);
 void  mgos_mqtt_add_global_handler(void (*)(void *, int, void *, void *), void *);
 int  mgos_mqtt_pub(char *, void *, int, int);
 void  mgos_mqtt_sub(char *, void (*)(void *, void *, int, void *, int, void *), void *);
-bool  mgos_pwm_set(int, int, int);
+bool  mgos_pwm_set_double(int, int, double);
 void * mgos_rpc_add_handler(void *, void (*)(void *, char *, char *, void *), void *);
 bool  mgos_rpc_call(char *, char *, char *, void (*)(char *, int, char *, void *), void *);
 bool  mgos_rpc_send_response(void *, char *);
@@ -130,7 +131,7 @@ double  sqrt(double);
 void * strdup(char *);
 void * sys_config_schema();
 int  temprature_sens_read(void);
-void  test(int, int);
+void  test_on(int);
 
 const struct mgos_ffi_export ffi_exports[] = {
   {"ceil", ceil},
@@ -178,6 +179,7 @@ const struct mgos_ffi_export ffi_exports[] = {
   {"mgos_connect_http_ssl", mgos_connect_http_ssl},
   {"mgos_connect_ssl", mgos_connect_ssl},
   {"mgos_disconnect", mgos_disconnect},
+  {"mgos_esp_deep_sleep_d", mgos_esp_deep_sleep_d},
   {"mgos_get_body_ptr", mgos_get_body_ptr},
   {"mgos_get_free_heap_size", mgos_get_free_heap_size},
   {"mgos_get_heap_size", mgos_get_heap_size},
@@ -213,7 +215,7 @@ const struct mgos_ffi_export ffi_exports[] = {
   {"mgos_mqtt_add_global_handler", mgos_mqtt_add_global_handler},
   {"mgos_mqtt_pub", mgos_mqtt_pub},
   {"mgos_mqtt_sub", mgos_mqtt_sub},
-  {"mgos_pwm_set", mgos_pwm_set},
+  {"mgos_pwm_set_double", mgos_pwm_set_double},
   {"mgos_rpc_add_handler", mgos_rpc_add_handler},
   {"mgos_rpc_call", mgos_rpc_call},
   {"mgos_rpc_send_response", mgos_rpc_send_response},
@@ -254,6 +256,6 @@ const struct mgos_ffi_export ffi_exports[] = {
   {"strdup", strdup},
   {"sys_config_schema", sys_config_schema},
   {"temprature_sens_read", temprature_sens_read},
-  {"test", test},
+  {"test_on", test_on},
 };
-const int ffi_exports_cnt = 122;
+const int ffi_exports_cnt = 123;

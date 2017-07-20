@@ -4,8 +4,9 @@ load('api_mqtt.js');
 load('api_sys.js');
 load('api_timer.js');
 
-let f = ffi('void test(int, int)')(4,1);
-
+print("Program start!!!!!!!!!!!!!!!!");
+let f = ffi('void test_on(int)');
+f(4);
 let led = ffi('int get_led_gpio_pin()')();
 
 let getInfo = function() {

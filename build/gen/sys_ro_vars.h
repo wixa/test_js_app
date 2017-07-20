@@ -1,9 +1,16 @@
-/* Generated file - do not edit. */
+/*
+ * Generated file - do not edit.
+ * Command: /mongoose-os/fw/tools/gen_sys_config.py --c_name=sys_ro_vars --c_const_char=true --dest_dir=/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/build/gen/ /mongoose-os/fw/src/sys_ro_vars_schema.yaml
+ */
 
 #ifndef SYS_RO_VARS_H_
 #define SYS_RO_VARS_H_
 
-#include "fw/src/mgos_config.h"
+#include "mgos_config.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
 
 struct sys_ro_vars {
   const char *mac_address;
@@ -13,6 +20,11 @@ struct sys_ro_vars {
   const char *fw_id;
 };
 
+
 const struct mgos_conf_entry *sys_ro_vars_schema();
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif /* SYS_RO_VARS_H_ */

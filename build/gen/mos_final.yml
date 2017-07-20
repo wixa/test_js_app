@@ -7,55 +7,56 @@ description: Only test app for write own "C" librarys and testing use its from f
 mongoose_os_version: latest
 sources:
 - local_libs/IFC_Driver/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mqtt/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/aws/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/http-server/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs/src
 - ${mjs_path}/mjs.c
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src/mg_rpc
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/src/common_gpio
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/src
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/src/esp32
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs/esp32/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-client/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-server/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-common/src/mg_rpc
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-common/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-loopback/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-mqtt/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-config/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-fs/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-gpio/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/i2c/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/i2c/src/common_gpio
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-i2c/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-ota/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-uart/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/spi/src
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/spi/src/esp32
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/vfs-dev-spi-flash/src
 - src
 filesystem:
 - local_libs/IFC_Driver/fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs/fs
 - ${mjs_path}/mjs/lib/api_*.js
 - ${mongoose_os_path}/fw/mjs_api/api_*.js
 - ${mongoose_os_path}/fw/platforms/${arch}/mjs_api/api_*.js
 - local_libs/IFC_Driver/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash/mjs_fs
-- /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs/esp32/fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mqtt/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/aws/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/http-server/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-client/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-server/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-common/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-loopback/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-mqtt/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-config/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-fs/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-gpio/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/i2c/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-i2c/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-ota/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-uart/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/spi/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/vfs-dev-spi-flash/mjs_fs
+- /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs/esp32/fs
 - fs
 extra_files: []
 ffi_symbols: []
@@ -141,20 +142,28 @@ config_schema:
   - s
   - ""
   - title: MQTT topic to publish STDERR to
-- - debug.stdout_topic
-  - esp32_??????/log
-- - debug.stderr_topic
-  - esp32_??????/log
 - - aws
   - o
   - title: AWS settings
-- - aws.shadow
-  - o
-  - title: AWS Device Shadow settings
-- - aws.shadow.thing_name
+- - aws.thing_name
   - s
   - ""
   - title: Set thing name. If not specified, device.id is used
+- - aws.greengrass
+  - o
+  - title: AWS Greengrass settings
+- - aws.greengrass.enable
+  - b
+  - false
+  - title: Enable AWS Greengrass service
+- - aws.greengrass.reconnect_timeout_min
+  - i
+  - 2
+  - title: Starting reconnect timeout
+- - aws.greengrass.reconnect_timeout_max
+  - i
+  - 60
+  - title: Maximum reconnect timeout
 - - http
   - o
   - title: HTTP Server
@@ -427,73 +436,73 @@ libs_handled:
   path: local_libs/IFC_Driver
   deps: []
 - name: mqtt
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mqtt
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mqtt
   deps: []
 - name: aws
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/aws
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/aws
   deps:
   - mqtt
 - name: http-server
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/http-server
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/http-server
   deps:
   - atca
 - name: mjs
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/mjs
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/mjs
   deps: []
 - name: ota-http-client
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-client
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-client
   deps: []
 - name: ota-http-server
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/ota-http-server
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/ota-http-server
   deps:
   - http-server
   - ota-http-client
 - name: rpc-common
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-common
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-common
   deps:
   - http-server
 - name: rpc-loopback
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-loopback
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-loopback
   deps:
   - rpc-common
 - name: rpc-mqtt
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-mqtt
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-mqtt
   deps:
   - mqtt
   - rpc-common
 - name: rpc-service-config
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-config
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-config
   deps:
   - rpc-common
 - name: rpc-service-fs
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-fs
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-fs
   deps:
   - rpc-common
 - name: rpc-service-gpio
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-gpio
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-gpio
   deps:
   - rpc-common
 - name: i2c
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/i2c
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/i2c
   deps: []
 - name: rpc-service-i2c
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-i2c
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-i2c
   deps:
   - i2c
   - rpc-common
 - name: rpc-service-ota
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-service-ota
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-service-ota
   deps:
   - ota-http-client
   - rpc-common
 - name: rpc-uart
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/rpc-uart
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/rpc-uart
   deps:
   - rpc-common
 - name: spi
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/spi
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/spi
   deps: []
 - name: vfs-dev-spi-flash
-  path: /var/tmp/fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_979700601/libs/vfs-dev-spi-flash
+  path: /fwbuild-volumes/latest/apps/test_js/esp32/build_contexts/build_ctx_251090076/libs/vfs-dev-spi-flash
   deps:
   - spi

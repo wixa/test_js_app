@@ -3,8 +3,8 @@
 #include <stddef.h>
 #include "sys_config.h"
 
-const struct mgos_conf_entry sys_config_schema_[132] = {
-  {.type = CONF_TYPE_OBJECT, .key = "", .num_desc = 131},
+const struct mgos_conf_entry sys_config_schema_[135] = {
+  {.type = CONF_TYPE_OBJECT, .key = "", .num_desc = 134},
   {.type = CONF_TYPE_OBJECT, .key = "sntp", .num_desc = 5},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct sys_config, sntp.enable)},
   {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct sys_config, sntp.server)},
@@ -83,9 +83,12 @@ const struct mgos_conf_entry sys_config_schema_[132] = {
   {.type = CONF_TYPE_INT, .key = "keep_alive", .offset = offsetof(struct sys_config, mqtt.keep_alive)},
   {.type = CONF_TYPE_STRING, .key = "will_topic", .offset = offsetof(struct sys_config, mqtt.will_topic)},
   {.type = CONF_TYPE_STRING, .key = "will_message", .offset = offsetof(struct sys_config, mqtt.will_message)},
-  {.type = CONF_TYPE_OBJECT, .key = "aws", .num_desc = 2},
-  {.type = CONF_TYPE_OBJECT, .key = "shadow", .num_desc = 1},
-  {.type = CONF_TYPE_STRING, .key = "thing_name", .offset = offsetof(struct sys_config, aws.shadow.thing_name)},
+  {.type = CONF_TYPE_OBJECT, .key = "aws", .num_desc = 5},
+  {.type = CONF_TYPE_STRING, .key = "thing_name", .offset = offsetof(struct sys_config, aws.thing_name)},
+  {.type = CONF_TYPE_OBJECT, .key = "greengrass", .num_desc = 3},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct sys_config, aws.greengrass.enable)},
+  {.type = CONF_TYPE_INT, .key = "reconnect_timeout_min", .offset = offsetof(struct sys_config, aws.greengrass.reconnect_timeout_min)},
+  {.type = CONF_TYPE_INT, .key = "reconnect_timeout_max", .offset = offsetof(struct sys_config, aws.greengrass.reconnect_timeout_max)},
   {.type = CONF_TYPE_OBJECT, .key = "http", .num_desc = 9},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct sys_config, http.enable)},
   {.type = CONF_TYPE_STRING, .key = "listen_addr", .offset = offsetof(struct sys_config, http.listen_addr)},
